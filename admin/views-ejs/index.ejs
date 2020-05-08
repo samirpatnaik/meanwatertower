@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Water Tower</title>
+
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+  function admin_validate()
+  {
+
+    if (document.form1.uname.value == "") {
+      alert("Please Enter User Name.");
+      document.form1.uname.focus();
+      return false;
+    }
+    if (document.form1.pwd.value == "") {
+      alert("Please Enter Password.");
+      document.form1.pwd.focus();
+      return false;
+    }
+  }
+</script>
+
+</head>
+
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr>
+    <td><table width="368" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" valign="top" style="padding-bottom:10px;"><img src="/images/watertower-logo.png" width="237" height="238"></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><img src="/images/adminlogin_top.png" width="368" height="56"></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" background="/images/adminlogin_bg.png" style="padding:20px 0px 10px 0px;">
+          <form method="post" action="/admin/" name="form1"  onSubmit="return admin_validate();">
+          <table width="308" border="0" cellspacing="0" cellpadding="0">
+            <%
+              if(message.length > 0){
+            %>
+            <tr>
+              <td height="36" align="center"><div class="alert alert-danger"><%= message %></div></td>
+            </tr>
+            <% } %>
+
+            <tr>
+            <td height="36" align="left" valign="middle" background="/images/adminlogin_form1.gif" style="padding-left:10px;"><input type="text" name="uname" id="uname" class="formbox1" placeholder="User name">
+            </td>
+          </tr>
+          <tr>
+            <td align="left" valign="top">&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="36" align="left" valign="middle" background="/images/adminlogin_form2.gif" style="padding-left:10px;"><input type="password" name="pwd" id="pwd" class="formbox1" placeholder="Password">
+            </td>
+          </tr>
+          <tr>
+            <td align="left" valign="top">&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><input type="image" name="imageField" id="imageField" src="/images/adminlogin_btn.png">
+            </td>
+          </tr>
+        </table></form></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top"><img src="/images/adminlogin_btm.png" width="368" height="19"></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+</body>
+
+</html>

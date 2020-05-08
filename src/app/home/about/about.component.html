@@ -1,0 +1,38 @@
+<div class="about" id="about">
+  <h2 style="background:url(../../../assets/images/titlebg2.jpg) no-repeat center top">ABOUT</h2>
+
+
+
+  <div class="container about2">
+    <div class="row">
+
+      <div class="col-lg-7 col-md-6 col-sm-5 about_txt"><div innerHTML="{{ aboutrec[0].details }}"></div></div>
+
+      <div class="col-lg-5 col-md-6 col-sm-7">
+
+        <div class="aboutimage_hover">
+          <ul>
+            <li *ngFor="let x of teamrec">
+              <img src="./upload_team/{{x.image}}" alt="">
+
+              <div class="about_texthover">
+
+                <h6>{{x.title}}</h6>
+                <small>{{x.designation}}</small>
+
+                <span class="exerience"><span class="age">{{x.experience}}</span>Years Experience</span>
+
+                <div innerHTML="{{x.details}}"></div>
+              </div>
+
+            </li>
+
+
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

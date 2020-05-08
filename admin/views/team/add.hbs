@@ -1,0 +1,141 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Water Tower</title>
+
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" type="text/css" href="/css/accordian_leftside.css">
+
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
+
+  <script>
+    $(function() {
+      $( "#mytestform" ).validate({
+
+        messages: {
+          title : "Please enter the name",
+          designation : "Please enter the designation",
+          experience : "Please enter the years of experience",
+          banner :" Please upload file for member",
+          display_order :" Enter The Display Order"
+        }
+      });
+        $('INPUT[type="file"]').change(function (){
+          var ext = this.value.match(/\.(.+)$/)[1];
+          switch (ext) {
+            case 'jpg':
+            case 'jpeg':
+            case 'png':
+            case 'gif':
+              break;
+            default:
+              alert('This is not an allowed file type.');
+              this.value = '';
+          }
+        });
+    });
+  </script>
+  {{> editorhead}}
+</head>
+
+<body>
+  {{> editorbody}}
+<div align="center">
+  <table width="1100" border="0" cellpadding="0" cellspacing="0" height="100%">
+    <tr>
+      <td height="90" align="center" valign="middle" background="/images/headerbg.jpg">{{> header}} </td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><table width="1100" border="0" cellspacing="0" cellpadding="0" height="100%">
+          <tr>
+            <td width="250" align="left" valign="top" bgcolor="#dedede">{{> menu}}</td>
+            <td width="850" align="left" valign="top" bgcolor="#FFFFFF">&nbsp;
+              <div align="center">
+                <table border="0" width="98%">
+                  <tr>
+                    <td align="left" width="100%" valign="top" bgcolor="#382E2A" style="padding:7px 0px 7px 10px" class="content3" colspan="2">
+                      Add New Member</td>
+                  </tr>
+
+                  <tr>
+                    <td align="left" width="100%" valign="top" colspan="2">
+                      <form action="" method="POST" enctype="multipart/form-data" name="mytestform" id="mytestform">
+                        <table width="100%" id="table6" cellspacing="0" cellpadding="0"  style="padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+
+                          <tr>
+                            <td width="100%" align="center" height="25" class="content1" style="padding-right: 5px" colspan="2">&nbsp;</td>
+                          </tr>
+
+                          <tr>
+                            <td width="100%" align="center" height="35" class="content1" style="padding-right: 5px" colspan="2">&nbsp;</td>
+                          </tr>
+
+                          <tr>
+                            <td width="22%" align="right" height="35" class="content1" style="padding-right: 5px">
+                              Name</td>
+                            <td width="78%" style="padding-left: 5px;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#FF0000;" height="35" align="left">
+                              <input type="text" name="title" size="60" class="required"></td>
+                          </tr>
+                          <tr>
+                            <td width="22%" align="right" height="35" class="content1" style="padding-right: 5px">
+                              Designation</td>
+                            <td width="78%" style="padding-left: 5px;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#FF0000;" height="35" align="left">
+                              <input type="text" name="designation" size="60" class="required">
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="22%" align="right" height="35" class="content1" style="padding-right: 5px">
+                              Experience in years</td>
+                            <td width="78%" style="padding-left: 5px;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#FF0000;" height="35" align="left">
+                              <input type="text" name="experience" size="60" class="required" ></td>
+                          </tr>
+                          <tr>
+                            <td width="22%" align="right" height="35" class="content1" style="padding-right: 5px" valign="top">
+                              Details</td>
+                            <td width="78%" style="padding-left: 5px;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#FF0000;" height="35" align="left" valign="top">
+                              <textarea name="details" id="edit"></textarea></td>
+                          </tr>
+{{> editorfooter}}
+                          <tr>
+                            <td width="22%" align="right" height="35" class="content1" style="padding-right: 5px">Member Image</td>
+                            <td width="78%" style="padding-left: 5px;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#FF0000;" height="35" align="left">
+                              <input type="file" name="banner" id="banner"  class="required">&nbsp;
+                              <font color="#000000">(width: 100px, Height:100px)</font>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td width="22%" align="right" height="35" class="content1" style="padding-right: 5px">
+                              Display Order</td>
+                            <td width="78%" style="padding-left: 5px;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#FF0000;" height="35" align="left">
+                              <input name="display_order" id="display_order" class="required" size="33"></td>
+                          </tr>
+                          <tr>
+                            <td width="22%" align="right" height="35">&nbsp;</td>
+                            <td width="78%" height="35" style="padding-left: 5px" align="left">
+                              <input type="image" name="imageField" id="imageField" src="/images/submit.png"></td>
+                          </tr>
+                          <tr>
+                            <td align="right" height="35">&nbsp;</td>
+                            <td height="35" style="padding-left: 5px" align="left">&nbsp;</td>
+                          </tr>
+                        </table>
+                      </form>
+
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Water Tower</title>
+
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" type="text/css" href="/css/accordian_leftside.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+<div align="center">
+  <table width="1100" border="0" cellpadding="0" cellspacing="0" height="100%">
+    <tr>
+      <td height="90" align="center" valign="middle" background="/images/headerbg.jpg">{{> header}} </td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><table width="1100" border="0" cellspacing="0" cellpadding="0" height="100%">
+          <tr>
+            <td width="250" align="left" valign="top" bgcolor="#dedede">{{> menu}}</td>
+            <td width="850" align="left" valign="top" bgcolor="#FFFFFF">&nbsp;
+              <div align="center">
+                <table border="0" width="98%">
+                  <tr>
+                    <td align="left" width="100%" valign="top" bgcolor="#382E2A" style="padding:7px 0px 7px 10px" class="content3" colspan="2">
+                      Manage Team Members</td>
+                  </tr>
+                  <tr>
+                    <td align="center" width="80%"> &nbsp;
+                      {{#if message}}
+                      <div class="alert alert-danger">{{ message }}</div>
+                      {{/if}}
+                    </td>
+                    <td align="center" width="20%" valign="top" style="padding-top: 10px; padding-bottom: 10px">
+                      <a href="add/" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus"></span> Add Member</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" width="100%" valign="top" colspan="2">
+                      <table border="0" width="100%" cellspacing="0" cellpadding="0" id="table-1">
+                        <tr nodrop="true" nodrag="true" >
+
+                          <td bgcolor="#382E2A" width="5%" height="20" style="font-family: Verdana; font-size: 8pt; color: #FFFFFF; border-left: 1px solid #382E2A; ; border-right-width:1px; border-top-width:1px; border-bottom-width:1px" align="center">
+                            #</td>
+                          <td bgcolor="#382E2A" width="75%" height="20" style="font-family: Verdana; font-size: 8pt; color: #FFFFFF; padding-left:5px" align="center">
+                            Name & Designation</td>
+                          <td bgcolor="#382E2A" width="20%" height="20" style="font-family: Verdana; font-size: 8pt; color: #FFFFFF; border-right: 1px solid #719DA9" align="center" colspan="2">
+                            Action</td>
+                        </tr>
+
+                        {{#each data}}
+                        <tr>
+                          <td style="font-family: Verdana; font-size: 8pt; color: #333333; border-left: 1px solid #382E2A; border-bottom: 1px solid #382E2A; ; padding-top:5px; padding-bottom:5px; border-right-width:1px; border-top-width:1px" width="5%" height="20" align="center">{{inc @index}}</td>
+                          <td style="font-family: Verdana; font-size: 8pt; color: #333333; border-left: 1px solid #382E2A; border-bottom: 1px solid #382E2A; padding-left:5px; padding-top:5px; padding-bottom:5px" width="75%" height="20" align="center">{{ title }} - {{ designation }}</td>
+                          <td style="border-left: 1px solid #382E2A; border-right: 1px solid #382E2A; border-bottom: 1px solid #382E2A; ; padding-top:5px; padding-bottom:5px" width="10%" height="20" align="center">
+                            <a href="edit/{{ _id }}">
+                              <button type="button" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                              </button>
+                            </a>
+                          </td>
+                          <td style="border-right: 1px solid #382E2A; border-bottom: 1px solid #382E2A; ; padding-top:5px; padding-bottom:5px" width="10%" height="20" align="center">
+                            <form method="post" action="delete/{{ _id }}">
+                              <button type="submit" class="btn btn-default btn-sm" onClick="return confirm('Are you sure you want to delete?')">
+                                <span class="glyphicon glyphicon-remove"></span>
+                              </button>
+                            </form></td>
+                        </tr>
+                        {{/each}}
+
+                      </table>
+
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr>
+      <td height="15" align="center" valign="top" bgcolor="#382e2a"></td>
+    </tr>
+  </table>
+</div>
+</body>
+
+</html>

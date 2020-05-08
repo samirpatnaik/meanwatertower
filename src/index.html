@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Watertower</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" media="screen">
+  <link href="assets/css/project_slider.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="assets/css/navactive.css" rel="stylesheet" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="assets/css/responsiveslides.css">
+  <script src="assets/js/responsiveslides.min.js"></script>
+
+  <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+      // Slideshow 4
+      $("#slider4").responsiveSlides({
+        auto: true,
+        pager: false,
+        nav: true,
+        speed: 300,
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+
+      // Slideshow 5 for Home page PLAN section
+      $("#slider5").responsiveSlides({
+        auto: true,
+        pager: false,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+      // Slideshow 6 for Home page DESIGN section
+      $("#slider6").responsiveSlides({
+        auto: true,
+        pager: false,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+
+      // Slideshow 7 for Home page BUILD section
+      $("#slider7").responsiveSlides({
+        auto: true,
+        pager: false,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+
+
+    });
+  </script>
+
+  <script src="assets/js/classie.js"></script>
+  <script>
+    function init() {
+      window.addEventListener('scroll', function(e){
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+          shrinkOn = 300,
+          header = document.querySelector("header");
+        if (distanceY > shrinkOn) {
+          classie.add(header,"smaller");
+        } else {
+          if (classie.has(header,"smaller")) {
+            classie.remove(header,"smaller");
+          }
+        }
+      });
+    }
+    window.onload = init();
+  </script>
+
+  <link rel="stylesheet" href="assets/css/demo.css" />
+  <link rel="stylesheet" href="assets/css/animate.min.css">
+  <link rel="stylesheet" href="assets/css/jquery.desoslide.css">
+
+</head>
+<body>
+  <div class="website_starsymbol"><img src="assets/images/website_starmark.png" alt=""></div>
+  <a name="top" id="home"></a>
+  <app-root></app-root>
+
+  <script>
+    jQuery(document).ready(function() {
+      var offset = 220;
+      var duration = 500;
+      jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+          jQuery('.back-to-top').fadeIn(duration);
+        } else {
+          jQuery('.back-to-top').fadeOut(duration);
+        }
+      });
+
+      jQuery('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+      })
+    });
+  </script>
+
+  <script type="text/javascript" src="assets/js/jquery.flexisel.js"></script>
+  <script type="text/javascript">
+
+    $(window).load(function() {
+      $("#flexiselDemo1").flexisel();
+      $("#flexiselDemo2").flexisel({
+        visibleItems: 4,
+        animationSpeed : 200,
+        autoPlay : false,
+        autoPlaySpeed : 3000,
+        pauseOnHover : true,
+        setMaxWidthAndHeight : false,
+        enableResponsiveBreakpoints : true,
+        responsiveBreakpoints: {
+          portrait: {
+            changePoint:480,
+            visibleItems: 1
+          },
+          landscape: {
+            changePoint:640,
+            visibleItems: 2
+          },
+          tablet: {
+            changePoint:768,
+            visibleItems: 2
+          }
+        }
+      });
+
+
+    });
+  </script>
+
+
+  <script src="assets/js/script.js"></script>
+
+  <!--=============================New SLider Addes Here=======================
+
+  <script type="text/javascript" src="assets/js/jssor.slider-21.1.2.mini.js"></script>
+  <script type="text/javascript" src="assets/js/projectslider.js"></script>-->
+</body>
+</html>

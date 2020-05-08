@@ -1,0 +1,88 @@
+<!--===================================Service===================================-->
+
+<div class="plandesignbuild">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        PLAN  <img src="../../../assets/images/star.png" alt="">    DESIGN   <img src="../../../assets/images/star.png" alt="">      BUILD
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--===================================Service===================================-->
+
+<div class="service" id="services">
+  <h2 style="background:url(../../../assets/images/titlebg5.jpg) no-repeat center top">SERVICES</h2>
+  <div class="container service_box">
+
+    <div class="row">
+      <div class="col-md-10 col-md-push-1"><div class="row">
+
+        <div class="col-md-4 col-sm-4 service_box2">
+          <img src="../../../assets/images/plan_icon.png" alt="">
+          <h4>PLAN</h4>
+
+          <div innerHTML="{{planrec[0].details}}"></div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-4 service_box2">
+          <img src="../../../assets/images/design_icon.png" alt="">
+          <h4>DESIGN</h4>
+          <div innerHTML="{{designrec[0].details}}"></div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 service_box2">
+          <img src="../../../assets/images/build_icon.png" alt="">
+          <h4>BUILD</h4>
+          <div innerHTML="{{buildrec[0].details}}"></div>
+        </div>
+
+      </div></div>
+    </div>
+
+    <div class="row"><div class="col-md-10 col-md-push-1"><div class="row">
+
+      <div class="col-md-4 col-sm-4"><div class="service_box_bannerslide">
+        <div class="callbacks_container">
+          <ul class="rslides" id="slider5">
+            <ng-container *ngFor = "let gal of servicegal">
+              <li *ngIf="gal.sid == 'plan'">
+                <img src="./gallery/{{gal.imgnm}}" alt="">
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div></div>
+
+      <div class="col-md-4 col-sm-4"><div class="service_box_bannerslide">
+        <div class="callbacks_container">
+          <ul class="rslides" id="slider6">
+            <ng-container *ngFor = "let gal1 of servicegal">
+              <li *ngIf="gal1.sid == 'design'">
+                <img src="./gallery/{{gal1.imgnm}}" alt="">
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div></div>
+
+      <div class="col-md-4 col-sm-4"><div class="service_box_bannerslide">
+        <div class="callbacks_container">
+          <ul class="rslides" id="slider7">
+            <ng-container *ngFor = "let gal2 of servicegal">
+              <li *ngIf="gal2.sid == 'build'">
+                <img src="./gallery/{{gal2.imgnm}}" alt="">
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </div></div>
+
+
+
+    </div></div></div>
+
+  </div>
+</div>

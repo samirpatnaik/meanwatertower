@@ -1,0 +1,80 @@
+<div class="contactus" id="contact">
+  <h2 style="background:url(../../../assets/images/titlebg1.jpg) no-repeat center top">CONTACT</h2>
+  <div class="container">
+    <div class="row">
+
+      <h4>{{contactrec[0].heading}}</h4>
+      <p>{{contactrec[0].subheading}}</p>
+      <p>{{msg}}</p>
+      <div class="col-md-7 col-sm-7" style="padding-bottom: 50px">
+        <form [formGroup]="frmDetails" (ngSubmit) = "frmSubmit()">
+          <div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
+            <label>First Name</label>
+            <input name="" type="text" class="form-control" formControlName="fname" >
+            <div class="alert-danger" *ngIf="frmDetails.controls['fname'].errors?.required && frmDetails.controls['fname'].touched">
+              First Name is required
+            </div>
+          </div>
+          <div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
+            <label>Last Name</label>
+            <input type="text" class="form-control" formControlName="lname">
+            <div class="alert-danger" *ngIf="frmDetails.controls['lname'].errors?.required && frmDetails.controls['lname'].touched">
+              Last Name is required
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
+            <label>Email Address</label>
+            <input type="text" class="form-control" formControlName="email">
+            <div class="alert-danger" *ngIf="frmDetails.controls['email'].errors?.required && frmDetails.controls['email'].touched">
+              Email Address is required
+            </div>
+            <div class="alert-danger" *ngIf="frmDetails.controls['email'].errors?.pattern && frmDetails.controls['email'].dirty">
+              Please Enter correct email address
+            </div>
+          </div>
+          <div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
+            <label>Phone</label>
+            <input type="text" class="form-control" formControlName="phone">
+            <div class="alert-danger" *ngIf="frmDetails.controls['phone'].errors?.required && frmDetails.controls['phone'].touched">
+              Phone Number is required
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <label>Message</label>
+            <textarea name="" cols="" rows="" class="form-control" formControlName="message" rows="5"></textarea>
+            <div class="alert-danger" *ngIf="frmDetails.controls['message'].errors?.required && frmDetails.controls['message'].touched">
+              Please Enter your message
+            </div>
+
+          </div>
+
+          <div class="clearfix"></div>
+          <div class="col-xs-10 col-sm-4 col-md-4 col-lg-4">
+            <button type="submit" class="btn btn-default"  [disabled]="!frmDetails.valid">Submit</button>
+          </div>
+        </form>
+
+      </div>
+
+      <div class="col-md-4 col-sm-4"><div class="contact_right">
+
+                <span class="social">
+                    <a href="{{contactrec[0].social1}}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="{{contactrec[0].social2}}"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                    <a href="{{contactrec[0].social3}}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="{{contactrec[0].social4}}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                </span>
+
+        <address>
+          <div innerHTML="{{contactrec[0].details}}"></div>
+          <span>{{contactrec[0].phone1}}</span>
+        </address>
+
+
+      </div></div>
+
+    </div>
+  </div>
+</div>

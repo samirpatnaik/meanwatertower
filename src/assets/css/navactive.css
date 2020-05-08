@@ -1,0 +1,38 @@
+
+ul.navHighlighter {
+	text-align: center;
+	top: 0;
+	right: 0;
+	width: 100%;
+	margin: 0;
+	transition: all 0.3s ease-in-out;
+}
+
+ul.navHighlighter li {
+	display: inline-block;
+}
+
+ul.navHighlighter li a {
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+}
+
+/*after & focus/hover states*/
+li a:focus {
+	outline: 0;
+}
+
+
+
+/*.nav-active:after {
+	content:'';
+	display: block;
+	height: 3px;
+	background: RGB(205, 153, 117);
+	width: 100%;
+}*/
+
+
+.nav-active a { color:#e24307 !important}
+

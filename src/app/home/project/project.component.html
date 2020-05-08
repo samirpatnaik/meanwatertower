@@ -1,0 +1,29 @@
+<div class="project" id="projects">
+  <h2 style="background:url(../../../assets/images/titlebg4.jpg) no-repeat center top">PROJECTS</h2>
+  <div class="container project2">
+    <div class="row">
+      <div class="col-md-12 project_recentwork">
+        <h4>RECENT WORK</h4>
+        <p>Take a look at our recent work.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ul id="flexiselDemo2">
+          <li *ngFor="let prj of galleryimg">
+            <a href="#"><img src="./project/{{prj.image}}" alt="" width="260" height="170"/></a>
+            <div class="thumb_modelsrollover">
+              <h6>{{prj.title}}<br>{{prj.location}}</h6>
+              <span class="button"><a [routerLink]="['/projectdetail',prj.id]" >VIEW PROJECT</a></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 project_viewallbtn">
+        <button class="allbtn1" type="button" (click)="goProjectList()">VIEW ALL PROJECTS</button>
+      </div>
+    </div>
+  </div>
+</div>

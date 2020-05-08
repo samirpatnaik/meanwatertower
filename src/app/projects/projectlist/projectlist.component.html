@@ -1,0 +1,54 @@
+<div class="project" id="projects">
+  <h2 style="background:url(../../../assets/images/titlebg4.jpg) no-repeat center top">PROJECTS</h2>
+  <div class="container project2">
+    <div class="row">
+      <div class="col-md-12 project_recentwork">
+        <h4>ALL PROJECTS</h4>
+        <p>Click any project or select a specific category.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12"><div class="projectpage_products">
+
+        <ul id="projectlist">
+
+          <li *ngFor="let prlist of projectlist">
+            <a href="#"><img src="./project/{{prlist.image}}" width="260px" height="170px" alt="" /></a>
+            <div class="thumb_modelsrollover">
+
+              <h6>{{prlist.title}} - {{prlist.location}}</h6>
+              <span class="button"><a [routerLink]="['/projectdetail',prlist.id]" >VIEW PROJECT</a></span>            </div>
+          </li>
+
+        </ul>
+
+      </div></div>
+    </div>
+    <!--
+    <div class="row">
+      <div class="col-md-12"><div class=" project_viewallbtn2">
+        <?php
+				$query = "SELECT id,project_category FROM project_category where siteid='wt' order by display_order";
+				if ($result = $mysqli->query($query))
+        {
+        ?>
+        <select name="country_id" tabindex="1" class="selproject" id="country_id">
+          <option value="0">ALL CATEGORIES</option>
+          <?php
+					    while ($row = $result->fetch_row())
+          {
+          ?>
+          <option value="<?php print $row[0]; ?>"><?php print $row[1]; ?></option>
+          <?php
+						}
+					?>
+        </select>
+        <?php
+    			}
+    		?>
+      </div></div>
+    </div>
+  -->
+
+  </div>
+</div>

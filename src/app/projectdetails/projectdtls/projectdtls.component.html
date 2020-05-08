@@ -1,0 +1,85 @@
+
+<div class="project" id="projects">
+  <h2 style="background:url(../../../assets/images/titlebg4.jpg) no-repeat center top">PROJECTS</h2>
+  <div class="container project2">
+    <div class="row">
+      <!-- New Slider Code Start -->
+
+      <div class="col-md-10 col-md-push-1 projectdetails_gallery">
+
+        <div class="row"><div class="col-md-12">
+          <h4><span style=" color:#e24307;">{{prjDtls[0].title}}</span> <br/> {{prjDtls[0].location}}</h4>
+        </div> </div>
+
+
+        <div class="row"><div class="col-md-12">
+
+          <div class="projectslider_imagarea">
+
+
+            <div id="jssor_1" class="jssorlsiderdiv">
+
+              <div class="projectslider_uptext" innerHTML="{{prjDtls[0].details}}"> </div>
+
+
+
+              <!-- Loading Screen -->
+              <div data-u="loading" class="jssorlsiderdiv2">
+                <div class="jssorlsiderdiv3"></div>
+                <div class="jssorlsiderdiv4"></div>
+              </div>
+              <div data-u="slides" class="jssorlsiderdiv5">
+
+                <div data-p="112.50" style="display: none;" *ngFor="let x of prjDtls">
+                  <img data-u="image" src="./gallery/{{x.imgnm}}" width="1000px" height="550px" alt="" />
+                  <img data-u="thumb" src="./gallery/{{x.imgnm}}" width="200px" height="110px" alt=""  />
+                </div>
+
+                <a data-u="add" href="#" style="display:none">Jssor Slider</a>
+
+              </div>
+              <!-- Thumbnail Navigator -->
+              <div u="thumbnavigator" class="jssort03 jssorlsiderdiv6" data-autocenter="1">
+                <div class="jssorlsiderdiv7"></div>
+                <!-- Thumbnail Item Skin Begin -->
+                <div u="slides" style="cursor: default;">
+                  <div u="prototype" class="p">
+                    <div class="w">
+                      <div u="thumbnailtemplate" class="t"></div>
+                    </div>
+                    <div class="c"></div>
+                  </div>
+                </div>
+                <!-- Thumbnail Item Skin End -->
+              </div>
+              <!-- Arrow Navigator -->
+              <span data-u="arrowleft" class="jssora02l jssorlsiderdiv8"  data-autocenter="2"></span>
+              <span data-u="arrowright" class="jssora02r jssorlsiderdiv9"  data-autocenter="2"></span>
+            </div>
+
+
+
+
+          </div>
+
+        </div> </div>
+
+      </div>
+
+      <!-- New Slider Code End -->
+
+
+
+      <div class="col-md-12 project_viewallbtn">
+        <button class="allbtn1" type="button" (click)="goProjectList()">BACK TO PROJECTS LISTING</button>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+<script src="../../../assets/js/jquery.desoslide.js"></script>
+<script src="../../../assets/js/demo.js"></script>
+

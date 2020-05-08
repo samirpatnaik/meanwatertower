@@ -1,0 +1,89 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Water Tower</title>
+
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" type="text/css" href="/css/accordian_leftside.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <% include common/cmseditor %>
+</head>
+
+<body>
+<div align="center">
+  <table width="1100" border="0" cellpadding="0" cellspacing="0" height="100%">
+    <tr>
+      <td height="90" align="center" valign="middle" background="/images/headerbg.jpg"><% include common/header %> </td>
+    </tr>
+    <tr>
+      <?php include "top_link.php"; ?>
+    </tr>
+
+
+    <tr>
+      <td align="left" valign="top"><table width="1100" border="0" cellspacing="0" cellpadding="0" height="100%">
+          <tr>
+            <td width="250" align="left" valign="top" bgcolor="#dedede"><% include common/menu %></td>
+            <td width="850" align="left" valign="top" bgcolor="#FFFFFF">&nbsp;
+              <div align="center">
+                <table border="0" width="98%">
+                  <tr>
+                    <td align="left" width="100%" valign="top" bgcolor="#382E2A" style="padding:7px 0px 7px 10px" class="content3">
+                      Manage Design Section</td>
+                  </tr>
+                  <tr>
+                    <td align="left" width="100%" valign="top">
+
+                      <form action="" method="POST" name="mytestform" id="mytestform">
+
+                        <table width="100%" id="table6" cellspacing="0" cellpadding="0" class="content_black" style="padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+                          <% if (message.length > 0) { %>
+                          <tr>
+                            <td align="center" height="20" colspan="2" class="err" style="padding-top: 10px">
+                              <div class="alert alert-danger"><%= message %></div>
+                            </td>
+                          </tr>
+                          <% } %>
+                          <tr>
+                            <td width="22%" align="right" height="35" class="content1" style="padding-right: 5px" valign="top">
+                              Details</td>
+                            <td width="78%" style="padding-left: 5px;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#FF0000;" height="35" align="left">
+                              &nbsp;<textarea name="details" id="S1" cols="53" rows="8"><%= details %></textarea></td>
+                          </tr>
+
+
+                          <tr>
+                            <td width="22%" align="right" height="35">&nbsp;</td>
+                            <td width="78%" height="35" style="padding-left: 5px" align="left">
+                              <input type="image" name="imageField" id="imageField" src="/images/submit.png"></td>
+                          </tr>
+                          <tr>
+                            <td align="right" height="35">&nbsp;</td>
+                            <td height="35" style="padding-left: 5px" align="left">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="right" width="100%" class="content">
+                              &nbsp;</td>
+                          </tr>
+                        </table>
+                      </form>
+
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+            </td>
+          </tr>
+        </table></td>
+    </tr>
+    <tr>
+      <td height="15" align="center" valign="top" bgcolor="#382e2a"></td>
+    </tr>
+  </table>
+</div>
+</body>
+
+</html>
